@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/menu :: head">
+<meta charset="UTF-8">
+<link rel="stylesheet" th:href="@{/css/style.css}"/>
+<title>Formulario Produtos</title>
+</head>
+<body>
+<nav th:replace="layout/menu :: header"></nav>
+<div class="content">
+
+ <h1>Agregar o modificar produtos</h1>
+ <hr>
+ <br>
+  <form th:action="@{/guardarprod}" method="post" th:object="${product}">
+    <input type="hidden" th:field="*{id}" th:value="${product.id}">
+
+    <div>
+   
+      <label>Nombre</label>
+      <input type="text" th:field="*{nombre}">
+      <small th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}"></small>
+    </div>
+     <div>
+      <label>Cantidad</label>
+      <input type="text" th:field="*{cantidad}">
+      <small th:if="${#fields.hasErrors('cantidad')}" th:errors="*{cantidad}"></small>
+    </div>
+     <div>
+      <label>Precio</label>
+      <input type="text" th:field="*{precio}">
+      <small th:if="${#fields.hasErrors('precio')}" th:errors="*{precio}"></small>
+    </div>
+     <div>
+      <label>Categoría</label>
+      <input type="text" th:field="*{categoria}">
+     <small th:if="${#fields.hasErrors('categoria')}" th:errors="*{categoria}"></small>
+    </div>
+    
+      <button type="submit" class="btn-form">Confirmar</button>
+   
+  </form>
+  <br>
+  <hr>
+  <br>
+  <br>
+  <a th:href="@{/}" class="button">Inicio</a>
+  <a th:href=@{/listadopord} class="button">Produtos</a>
+</div>
+</body>
+</html>

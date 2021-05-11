@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/menu :: head">
+<meta charset="UTF-8">
+</head>
+<body>
+<nav th:replace="layout/menu :: header"></nav>
+<div class="content">
+
+<h1>Lista de productos</h1>
+<hr>
+<br>
+<form th:action="@{/pagina/1}" method="get" class="float-right">
+  <input type="search" name="nombre">
+  <button type="submit" class="btn btn-info">Buscar</button>
+</form>
+  <table >
+   <thead>
+  <!-- <th>ID</th> -->  
+    <th>NOMBRE</th>
+    <th>CANTIDAD</th>
+   <!-- <th>PRECIO</th> -->  
+   <!-- <th>CATEGORIA</th> -->  
+    <th>ESTADO</th>
+    <th>ACCIONES</th>
+   </thead>
+   <tbody>
+     <tr th:each="prod : ${productosM}">
+     <!--  <td th:text="${prod.id}"></td> -->
+	     <td th:text="${prod.nombre}"></td>
+	     <td th:text="${prod.cantidad}"></td>
+	    <!--<td th:text="${prod.precio}"></td>  -->  
+	   <!-- <td th:text="${prod.categoria}"></td>  -->  
+	     <td th:text="${prod.estado==true ? 'Activo' : 'Inactivo'}"></td>
+	    <td>
+	    <a th:href="@{/editproduct/} + ${prod.id}" id="btn-edit">Editar</a> 
+	    <a th:href="@{/datalleProd/} + ${prod.id}" id="btn-detail">Detalle</a> 
+	    <a th:href="@{/editarProdEstado/true/}  + ${prod.id}" th:if="${prod.estado==false}" th:text="${'Activar'}" id="btn-activar"></a> 
+	    <a th:href="@{/editarProdEstado/false/} + ${prod.id}" th:if="${prod.estado == true}" th:text="${'Desactivar'}" id="btn-desactivar"></a>
+	     <!-- th:if="${prod.estado==true ? prod.setEstdo(false) : prod.setEstdo(true)} "  -->
+	       
+	  <!--  <a th:href="@{/deleteprod/} + ${prod.id}">Eliminar</a>  --> 
+	    
+	    </td>
+	  </tr>
+   </tbody>
+  </table>
+  <br>
+  <nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+    <li th:classappend="${paginaactual == 1 ? 'disabled' : ''}" class="page-item ">
+      <a class="page-link" th:href="@{'/pagina/'+${paginaactual -1}}" tabindex="-1" aria-disabled="true">Anterior</a>
+    </li>
+    <li th:classappend="${i==paginaactual ? 'active' : ''}" class="page-item" th:each="i : ${#numbers.sequence(1,totalpages)}"><a class="page-link" th:href="@{'/pagina/'+${i}}">[[${i}]]</a></li>
+    
+    <li th:classappend="${paginaactual == totalpages ? 'disabled' : ''}" class="page-item">
+      <a class="page-link" th:href="@{'/pagina/'+${paginaactual +1}}">Siguiente</a>
+    </li>
+  </ul>
+</nav>
+  <br>
+  <hr>
+  <br>
+  <a th:href="@{/}" class="button">Inicio</a>
+  <a th:href="@{/form/crear}" class="button">Nuevo producto</a>
+
+</div>
+
+</body>
+</html>

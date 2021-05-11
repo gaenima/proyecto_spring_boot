@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/menu :: head">
+<meta charset="UTF-8">
+<link rel="stylesheet" th:href="@{/css/style.css}"/>
+<title>Detalle de productos</title>
+</head>
+<body>
+<nav th:replace="layout/menu :: header"></nav>
+<div class="content">
+<h1>Detalle de Producto</h1>
+  
+  <hr>
+  <div th:object="${product}" id="detalle">
+  <label>ID: </label><label th:text="${product.id}"></label>
+  <br><br>
+  <label>NOMBRE: </label><label th:text="${product.nombre}"></label>
+
+  <br><br>
+  <label>CANTIDAD: </label><label th:text="${product.cantidad}"></label>
+  <br><br>
+  <label>PRECIO: $ </label><label th:text="${product.precio}"></label>
+  <br><br>
+  <label>CATEGORÍA: </label><label th:text="${product.categoria}"></label>
+  <br><br>
+  <label>ESTADO: </label><label th:text="${product.estado== true ? 'Activado' : 'Desactivado'}"></label>
+  </div>
+  <br>
+<a th:href="@{/listadopord}" class="button">Volver</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,119 @@
+body{
+	font-family: calibri;
+	background-image: linear-gradient(to right, #fac8d0 , #b8f6d4);
+	margin-top:20px;
+}
+h1{
+	color: #800080;
+	text-align: center;
+	}
+h2{
+	color: #050a6a;
+}
+table{
+	width: 100%;
+}
+table, form  {
+	border-radius: 7px;
+	border: 5px double f5f767;
+	background-color: #f9ecb3;
+	color: #626262;
+	padding: 10px;	
+	box-shadow: 5px 10px 5px 5px silver;
+	border-collapse: collapse;
+	border: 1px solid #edf00f;
+}
+th, td{
+	padding: 8px;
+}
+form,input,textarea{
+	border-radius: 8px;
+	padding: 7px;
+	border: 1px solid #edf00f;
+	position: relative;
+	top: -1px;
+	color: #626262;
+	text-align: left;	
+}
+form{
+	width: 40%;
+	padding: 10px;
+	margin: 5px auto;
+}
+}
+.content{
+	margin: 80px auto;
+	with: 800px;
+}
+a{
+	padding: 5px;
+	text-decoration: none;
+	text-align: center;
+	text-size: 15px;
+	border-radius: 3px;
+	
+}
+.button {
+	width: 20%;	
+	position: relative;
+	top: -5px;
+	color: blue;
+	background-color: #4df0f0;
+	border: blue 1px solid;
+	
+}
+.btn-form{
+	width: 30%;	
+	position: relative;
+	top: 3px;
+	left: 250px;
+	color: #045b06;
+	border: #045b06 1px solid;
+	background-color: #66f76c ;
+	border-radius: 3px;
+	padding: 7px;
+	text-align: center;
+}
+#btn-edit{
+	background-color: #eb9ac6;
+	color: #a4055b;
+	border:  solid 1px #a4055b; 
+	position: relative;
+	padding: 3px;
+}
+#btn-detail{
+	background-color: #b190fb;
+	color: #291062;
+	border:  solid 1px #291062; 
+	position: relative;
+	padding: 3px;
+	
+}
+#btn-activar{
+	background-color: #82f69e;
+	color: #02671b;
+	border:  solid 1px #02671b; 
+	position: relative;
+	padding: 3px;
+	
+}
+#btn-desactivar{
+	background-color: #f58588;
+	color: #700306;
+	border:  solid 1px #700306; 
+	position: relative;
+	padding: 3px;	
+}
+#detalle{
+	background-color: #dcaffc;
+	color: #40056a;
+	border: #40056a 1px solid;
+	width: 60%;
+	text-align: center;
+	font-size: 18px;	
+}
+.content{
+	margin: 10px 200px;
+	color: #03bdde;
+	
+}
